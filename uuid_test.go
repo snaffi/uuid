@@ -886,6 +886,8 @@ func TestVersion7FromReader(t *testing.T) {
 
 func TestVersion7FromReaderWithTime(t *testing.T) {
 	myString := "8059ddhdle77cb52"
+	// other tests affects `lastV7time`, so we need to reset it
+	lastV7time = 0
 	timeFunc := func() time.Time {
 		return time.Date(1992, time.November, 5, 8, 8, 8, 8, time.UTC)
 	}
